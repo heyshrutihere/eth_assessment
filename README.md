@@ -24,11 +24,14 @@ This project is a Solidity-based smart contract that implements a basic ERC-20-l
 ## Getting Started
 
 * mapping variable here
+
   mapping(address => uint) public newBalances;
 
   The provided Solidity code defines a smart contract named MyToken under the MIT license and compatible with Solidity version 0.8.18. This contract includes three public variables: newTokenName (initialized to "crimeXprime"), newTokenAbbrv (initialized to "SK"), and newTotalValue (initialized to 0), which store the token's name, abbreviation, and total supply, respectively. It also features a mapping newBalances to track the token balances of different addresses.
 
 * mint function
+
+  
     function nwmint(address _to, uint _value) public {
         newTotalValue += _value;
         newBalances[_to] += _value;
@@ -37,6 +40,8 @@ This project is a Solidity-based smart contract that implements a basic ERC-20-l
     The nwmint function allows the creation of new tokens by increasing the total supply and adding the specified value to the balance of the given address. It takes two parameters: _to (the address to mint tokens to) and _value (the amount of tokens to mint).
 
 * burn function
+
+  
     function newBurn(address _from, uint _value) public {
         require(newBalances[_from] >= _value);
         newTotalValue -= _value;
